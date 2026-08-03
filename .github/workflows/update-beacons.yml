@@ -1,0 +1,42 @@
+on:
+  workflow_dispatch:
+  schedule:
+    # Chaque lundi à 04:17 UTC
+    - cron: "17 4 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: f1teq-beacons-update
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt complet
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Construire la base complète
+        run: python scripts/build_beacons.py
+
+      - name: Contrôler 250 entrées minimum et 98 REF
+        run: python scripts/validate_repository.py
+
+      - name: Publier uniquement si les données ont changé
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/beacons.json data/beacons.min.json data/manifest.json
+          if git diff --cached --quiet; then
+            echo "Aucun changement dans la base."
+          else
+            git commit -m "Mise à jour automatique de la base complète des balises"
+            git push
+          fi
