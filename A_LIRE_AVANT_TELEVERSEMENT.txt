@@ -1,0 +1,40 @@
+F1TEQ-BEACONS — DEPOT COMPLET PRET POUR GITHUB
+================================================
+
+CE PACK REMPLACE ENTIEREMENT L'ANCIEN DEPOT.
+Ce n'est pas un patch.
+
+1. Dans GitHub, ouvrez le depot F1TEQ/f1teq-beacons.
+2. Supprimez tous les anciens fichiers et dossiers, y compris :
+   .github, scripts, data, esp32 et les anciens README.
+3. Decompressez le ZIP sur le PC.
+4. Ouvrez le dossier extrait.
+5. Dans GitHub : Add file > Upload files.
+6. Glissez TOUT LE CONTENU du dossier extrait, pas le ZIP lui-meme.
+7. Verifiez avant le commit que GitHub affiche notamment :
+   .github/workflows/update-beacons.yml
+   scripts/build_beacons.py
+   scripts/validate_repository.py
+   data/international_seed.json
+   data/manual_extra.json
+   data/beacons.json
+   data/beacons.min.json
+   data/manifest.json
+8. Validez Commit changes.
+9. Ouvrez Actions > Mise a jour des balises > Run workflow.
+10. Le journal doit afficher :
+    Total : 250 ou plus
+    Entrees REF : 98 ou plus
+    Entrees avec creneau IBP : 90
+    VALIDATION F1TEQ REUSSIE
+11. Ouvrez data/manifest.json. Le champ count doit etre 250 ou davantage.
+
+IMPORTANT
+---------
+Ne lancez pas l'installation depuis l'ESP32 si GitHub annonce seulement 152
+balises. Le firmware possede deja une base locale de 250 entrees.
+
+FICHIERS TELECHARGES PAR L'ESP32
+--------------------------------
+data/manifest.json
+data/beacons.min.json

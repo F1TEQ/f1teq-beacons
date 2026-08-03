@@ -1,0 +1,6 @@
+F1TEQ-BEACONS DEPOT COMPLET
+Version de la base initiale : 20260803-004
+Entrees internationales : 152
+Entrees REF : 98
+Total : 250
+Creneaux IBP : 90

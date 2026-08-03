@@ -1,0 +1,8 @@
+F1TEQ BEACON DATABASE — NOTICE DE PROVENANCE
+
+Les scripts et la structure du dépôt sont fournis par F1TEQ pour le projet
+Rotor Controller.
+
+Les données de balises restent attribuées à leurs sources respectives :
+IARU Région 1, NCDXF/IARU International Beacon Project et REF.
+La présence d'une entrée ne garantit pas qu'une balise soit actuellement active.

@@ -1,0 +1,28 @@
+CONTROLE DU PACK COMPLET F1TEQ-BEACONS
+======================================
+
+Version du manifeste : 20260803-004
+Date UTC : 2026-08-03T10:46:00+00:00
+Entrees internationales : 152
+Entrees REF : 98
+Total : 250
+Creneaux IBP : 90
+Taille beacons.min.json : 36477 octets
+SHA-256 beacons.min.json : 82aa29d7e4482719b6b8f6c4eaeb4edf7d48553d7205939290f794a4c4e07b28
+Limite firmware : 120000 octets
+
+CONTROLES EFFECTUES
+-------------------
+- JSON detaille valide : OUI
+- JSON compact valide : OUI
+- Manifeste valide : OUI
+- SHA du manifeste exact : OUI
+- Doublons indicatif/frequence : AUCUN
+- 98 entrees REF presentes : OUI
+- 90 creneaux IBP presents : OUI
+- Workflow .github present : OUI
+- Constructeur unique complet : OUI
+- Test hors ligne : REUSSI
+- Idempotence sans changement : REUSSIE
+
+Le test reel sur les serveurs GitHub Actions devra etre lance apres televersement.
